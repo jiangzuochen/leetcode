@@ -4,21 +4,20 @@ class Solution:
         :type s: str
         :rtype: int
         """
-        if s == '':
-            return 0
-        sublength=[0]
-        n=len(s)
-        if n==1:
-            return 1
-        i=j=0
-        max=0
-        while j<n-1:
-            if s[j+1] in s[i:j+1]:                
-                #sublength.append(j+1-i)
-                i+=s[i:j+1].index(s[j+1])+1
+        i=0
+        j=0
+        dict={}
+        max = 0 
+        for char in s:
             j+=1
-            if j+1-i>max:
-                max=j+1-i
-            #sublength[-1]=j+1-i
-        return max #
-        
+            if char not in dict:
+                dict[char]=j
+                if max < j - i:
+                    max = j-i
+            else:
+                if dict[char] > i:
+                    i = dict[char]
+                dict[char] = j
+                if max < j - i:
+                    max = j-i
+        return max
