@@ -1,2 +1,2 @@
 # leetcode
-Repo for leetcode exercise everyday
+Repo for leetcode exercise 
