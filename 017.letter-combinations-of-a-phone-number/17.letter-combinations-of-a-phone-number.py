@@ -32,26 +32,32 @@
 # in any order you want.
 # 
 #
-from operator import mul
-from functools import reduce
 class Solution(object):
+    def combinationTwo(self,l,digit):
+        """
+        :type l:list
+        :type digit:str
+        :rtype list
+        """
+        return [s+i for s in l for i in self.d[digit]]
+
+
     def letterCombinations(self, digits):
         """
         :type digits: str
         :rtype: List[str]        
         """
-        d={'2':'abc','3':'def','4':'ghi','5':'jkl','6':'mno','7':'pqrs','8':'tuv','9':'wxyz'}
-        countDict={}
-        for i in range(len(digits)):
-            countDict[i]=0
-        countArray=[0]*len(digits)
-        strOut=['']
-        while True:
-            for i,x in enumerate(digits):
-                
-
-            strOut.append(''.join[])
-        l=reduce(mul,[len(d[x]) for x in digits])
-        s=''*l
-
+        self.d={'2':'abc','3':'def','4':'ghi','5':'jkl','6':'mno','7':'pqrs','8':'tuv','9':'wxyz'}
+        if not digits:
+            return []
+        l1=list(self.d[digits[0]])
+        digits=digits[1:]
+        if not digits:
+            return l1
+        for i in digits:
+            l1=self.combinationTwo(l1,i)
+        return l1
+if __name__ == "__main__":
+    s=Solution()
+    print(s.letterCombinations(''))
 
