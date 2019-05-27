@@ -1,2 +1,2 @@
 # leetcode
-Repo for leetcode exercise 
+Repo for jiangzuochen's leetcode 
